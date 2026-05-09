@@ -6,7 +6,7 @@ export default function FatteningUnit() {
 
   return (
     <UnitPondGrid 
-      unitType="growout"
+      unitType="fattening"
       unitTitle={t('units.fattening')}
       systemType="نظام Biofloc"
     />

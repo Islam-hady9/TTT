@@ -97,6 +97,11 @@ export const pondsAPI = {
   createBatch: async (batchData) => {
     const response = await api.post('/ponds/batches', batchData)
     return response.data
+  },
+
+  getUnitSummary: async (unitType) => {
+    const response = await api.get(`/ponds/unit-summary/${unitType}`)
+    return response.data
   }
 }
 
@@ -105,6 +110,11 @@ export const pondsAPI = {
 export const waterQualityAPI = {
   create: async (data) => {
     const response = await api.post('/operations/water-quality', data)
+    return response.data
+  },
+
+  bulkCreate: async (records) => {
+    const response = await api.post('/operations/water-quality/bulk', { records })
     return response.data
   },
 
@@ -121,6 +131,11 @@ export const waterQualityAPI = {
 export const feedingAPI = {
   create: async (data) => {
     const response = await api.post('/operations/feeding', data)
+    return response.data
+  },
+
+  bulkCreate: async (records) => {
+    const response = await api.post('/operations/feeding/bulk', { records })
     return response.data
   },
 
@@ -160,6 +175,32 @@ export const additivesAPI = {
     const response = await api.get(`/operations/additives/pond/${pondId}`, {
       params: { days }
     })
+    return response.data
+  }
+}
+
+// ==================== Routine Tasks ====================
+
+export const routineTasksAPI = {
+  create: async (data) => {
+    const response = await api.post('/operations/routine-tasks', data)
+    return response.data
+  },
+
+  bulkCreate: async (tasks) => {
+    const response = await api.post('/operations/routine-tasks/bulk', { tasks })
+    return response.data
+  },
+
+  getByPond: async (pondId, { taskType, days = 30 } = {}) => {
+    const params = { days }
+    if (taskType) params.task_type = taskType
+    const response = await api.get(`/operations/routine-tasks/pond/${pondId}`, { params })
+    return response.data
+  },
+
+  getTodayByUnit: async (unitType) => {
+    const response = await api.get(`/operations/routine-tasks/today/${unitType}`)
     return response.data
   }
 }

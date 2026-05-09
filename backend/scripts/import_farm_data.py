@@ -8,8 +8,8 @@ from pathlib import Path
 from datetime import datetime
 import re
 
-# Add app to path
-sys.path.append(str(Path(__file__).parent))
+# Add backend/ to path so `from app...` imports resolve when running from scripts/
+sys.path.append(str(Path(__file__).parent.parent))
 
 from app.db.database import SessionLocal
 from app.models.pond import Pond, Batch
@@ -17,8 +17,8 @@ from app.models.water_quality import WaterQuality
 from app.models.feeding import Feeding
 from app.models.mortality import Mortality
 
-# Data folder path
-DATA_FOLDER = Path(__file__).parent.parent / "DATA"
+# Data folder path (repo_root/data)
+DATA_FOLDER = Path(__file__).parent.parent.parent / "data"
 
 def clean_numeric(value):
     """Clean and convert numeric values"""
@@ -78,15 +78,15 @@ def import_production_report():
             print(f"\n📋 Processing: {sheet_name}")
             df = pd.read_excel(excel_file, sheet_name=sheet_name, header=None)
             
-            # Determine unit type from sheet name
+            # Determine unit type from sheet name (uses spec-aligned vocab)
             if "التحضين" in sheet_name:
-                unit_type = "nursery"
+                unit_type = "hatchery"
                 stage = "nursery"  # التحضين (إصبعيات)
             elif "التربية" in sheet_name:
-                unit_type = "pregrow"
+                unit_type = "growout"
                 stage = "juveniles"  # التربية
             elif "التسمين" in sheet_name:
-                unit_type = "growout"
+                unit_type = "fattening"
                 stage = "fattening"  # التسمين
             else:
                 continue

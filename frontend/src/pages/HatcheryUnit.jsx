@@ -6,7 +6,7 @@ export default function HatcheryUnit() {
 
   return (
     <UnitPondGrid 
-      unitType="nursery"
+      unitType="hatchery"
       unitTitle={t('units.hatchery')}
       systemType="نظام RAS + Biofloc"
     />

@@ -6,7 +6,7 @@ export default function GrowoutUnit() {
 
   return (
     <UnitPondGrid 
-      unitType="pregrow"
+      unitType="growout"
       unitTitle={t('units.growout')}
       systemType="نظام Biofloc"
     />

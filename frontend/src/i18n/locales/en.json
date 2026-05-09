@@ -390,5 +390,32 @@
     "noData": "Insufficient data for analysis",
     "insufficientData": "Insufficient Data",
     "errorLoading": "Error loading analytics data"
+  },
+  "operations": {
+    "molasses": "Molasses",
+    "probiotics": "Probiotics",
+    "calciumCarbonate": "Calcium Carbonate",
+    "medicine": "Medicine",
+    "disinfectant": "Disinfectant",
+    "wasteRemoval": "Waste Removal",
+    "diffuserCleaning": "Diffuser Cleaning",
+    "waterChange": "Water Change",
+    "sorting": "Sorting",
+    "bulkLog": "Bulk Log",
+    "dailyChecklist": "Daily Task Checklist",
+    "markAllDone": "Mark all complete for today",
+    "markedDone": "Done",
+    "missingToday": "Missing — past noon",
+    "performedBy": "Performed by",
+    "addRecord": "Add record",
+    "saveAll": "Save all",
+    "blankRowsIgnored": "Blank rows are ignored"
+  },
+  "unitsKpi": {
+    "totalEggs": "Total Eggs",
+    "hatchRate": "Hatch Rate",
+    "flocLevel": "Floc Level",
+    "molassesConsumption7d": "Molasses (last 7 days)",
+    "harvestReady": "Harvest Ready"
   }
 }

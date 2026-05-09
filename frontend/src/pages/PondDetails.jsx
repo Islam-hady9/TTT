@@ -287,7 +287,7 @@ export default function PondDetails() {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">نوع الوحدة</span>
-              <span className="font-semibold">{t(`units.${unitType === 'nursery' ? 'hatchery' : unitType === 'pregrow' ? 'growout' : 'fattening'}`)}</span>
+              <span className="font-semibold">{t(`units.${unitType}`)}</span>
             </div>
             {pond?.volume && (
               <div className="flex justify-between">

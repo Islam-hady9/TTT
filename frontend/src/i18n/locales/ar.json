@@ -390,5 +390,32 @@
     "noData": "لا توجد بيانات كافية للتحليل",
     "insufficientData": "بيانات غير كافية",
     "errorLoading": "خطأ في تحميل بيانات التحليلات"
+  },
+  "operations": {
+    "molasses": "مولاس",
+    "probiotics": "بروبيوتيكس",
+    "calciumCarbonate": "كربونات الكالسيوم",
+    "medicine": "دواء",
+    "disinfectant": "مطهر",
+    "wasteRemoval": "إزالة النفايات",
+    "diffuserCleaning": "تنظيف الديفيوزر",
+    "waterChange": "تغيير الماء",
+    "sorting": "فرز الأسماك",
+    "bulkLog": "تسجيل جماعي",
+    "dailyChecklist": "قائمة المهام اليومية",
+    "markAllDone": "تسجيل الكل لليوم",
+    "markedDone": "تم",
+    "missingToday": "متأخر — بعد الظهر",
+    "performedBy": "تم التنفيذ بواسطة",
+    "addRecord": "إضافة سجل",
+    "saveAll": "حفظ الكل",
+    "blankRowsIgnored": "الصفوف الفارغة سيتم تجاهلها"
+  },
+  "unitsKpi": {
+    "totalEggs": "إجمالي البيض",
+    "hatchRate": "معدل الفقس",
+    "flocLevel": "متوسط الفلوك",
+    "molassesConsumption7d": "المولاس (آخر 7 أيام)",
+    "harvestReady": "جاهز للحصاد"
   }
 }

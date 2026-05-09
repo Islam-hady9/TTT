@@ -209,19 +209,12 @@ export default function Dashboard() {
     }
   }
 
-  // Map backend unit types to frontend display types
-  const unitTypeMap = {
-    nursery: 'hatchery',
-    pregrow: 'growout',
-    growout: 'fattening'
-  }
-
   // Calculate units data from real ponds and batches
   const calculateUnitsData = () => {
     const units = {
-      nursery: { ponds: [], batches: [] },
-      pregrow: { ponds: [], batches: [] },
-      growout: { ponds: [], batches: [] }
+      hatchery: { ponds: [], batches: [] },
+      growout: { ponds: [], batches: [] },
+      fattening: { ponds: [], batches: [] }
     }
 
     // Group ponds by unit type
@@ -238,13 +231,6 @@ export default function Dashboard() {
         units[pond.unit_type].batches.push(batch)
       }
     })
-
-    // Display name mapping: backend key -> display key for i18n and routes
-    const displayMap = {
-      nursery: { displayType: 'hatchery', i18nKey: 'hatchery' },
-      pregrow: { displayType: 'growout', i18nKey: 'growout' },
-      growout: { displayType: 'fattening', i18nKey: 'fattening' }
-    }
 
     // Calculate metrics for each unit
     return Object.entries(units).map(([backendType, data]) => {
@@ -264,11 +250,9 @@ export default function Dashboard() {
         ? unitBatches.reduce((sum, b) => sum + (b.mortality_rate || 0), 0) / unitBatches.length
         : 0
 
-      const { displayType, i18nKey } = displayMap[backendType]
-
       return {
-        name: t(`units.${i18nKey}`),
-        type: displayType,
+        name: t(`units.${backendType}`),
+        type: backendType,
         ponds: data.ponds.length,
         activeBatches: unitBatches.length,
         totalFish: Math.round(totalFish),
@@ -506,9 +490,9 @@ export default function Dashboard() {
                 className="input w-full"
               >
                 <option value="all">{t('filters.allUnits')}</option>
-                <option value="nursery">{t('units.hatchery')}</option>
-                <option value="pregrow">{t('units.growout')}</option>
-                <option value="growout">{t('units.fattening')}</option>
+                <option value="hatchery">{t('units.hatchery')}</option>
+                <option value="growout">{t('units.growout')}</option>
+                <option value="fattening">{t('units.fattening')}</option>
               </select>
             </div>
 

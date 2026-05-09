@@ -370,7 +370,13 @@ def get_batch_metrics(
     sgr_classification = None
     if batch.sgr:
         sgr_classification = sgr_calculator.classify_sgr(batch.sgr)
-    
+
+    # Hatch rate is only meaningful while the batch is at egg or fry stage.
+    # current_count / initial_count gives the proportion that survived hatching.
+    hatch_rate = None
+    if batch.stage in ("eggs", "fry") and batch.initial_count:
+        hatch_rate = batch.current_count / batch.initial_count
+
     return BatchMetricsResponse(
         batch_id=batch.id,
         batch_code=batch.batch_code,
@@ -384,6 +390,7 @@ def get_batch_metrics(
         sgr_classification=sgr_classification,
         mortality_rate=batch.mortality_rate,
         survival_rate=batch.survival_rate,
+        hatch_rate=hatch_rate,
         daily_feed_recommended_kg=feeding_schedule.get("recommended_feed_kg"),
         feed_type=feeding_schedule.get("feed_type"),
         meals_per_day=feeding_schedule.get("meals_per_day"),

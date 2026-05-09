@@ -46,6 +46,26 @@ class Batch(BatchBase):
     id: int
     status: str
     created_at: datetime
-    
+
     class Config:
         from_attributes = True
+
+
+class UnitSummaryResponse(BaseModel):
+    """Aggregate KPIs for one unit type (hatchery / growout / fattening)."""
+    unit_type: str
+    pond_count: int
+    active_batch_count: int
+    total_biomass_kg: float
+    avg_weight_g: Optional[float] = None
+
+    # Hatchery-specific
+    total_eggs: Optional[int] = None
+    avg_hatch_rate: Optional[float] = None  # 0..1
+
+    # Grow-out / fattening biofloc maintenance
+    avg_floc_level: Optional[float] = None
+    molasses_consumption_kg_7d: Optional[float] = None
+
+    # Fattening readiness
+    harvest_ready_count: Optional[int] = None

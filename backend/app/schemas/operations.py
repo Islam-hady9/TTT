@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import List, Optional
 from datetime import datetime
 
 # Water Quality
@@ -17,6 +17,9 @@ class WaterQualityBase(BaseModel):
 
 class WaterQualityCreate(WaterQualityBase):
     pass
+
+class WaterQualityBulkCreate(BaseModel):
+    records: List[WaterQualityCreate]
 
 class WaterQuality(WaterQualityBase):
     id: int
@@ -38,6 +41,9 @@ class FeedingBase(BaseModel):
 
 class FeedingCreate(FeedingBase):
     pass
+
+class FeedingBulkCreate(BaseModel):
+    records: List[FeedingCreate]
 
 class Feeding(FeedingBase):
     id: int
@@ -98,9 +104,12 @@ class RoutineTaskBase(BaseModel):
 class RoutineTaskCreate(RoutineTaskBase):
     pass
 
+class RoutineTaskBulkCreate(BaseModel):
+    tasks: List[RoutineTaskCreate]
+
 class RoutineTask(RoutineTaskBase):
     id: int
     performed_at: datetime
-    
+
     class Config:
         from_attributes = True

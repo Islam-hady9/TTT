@@ -99,6 +99,7 @@ class BatchMetricsResponse(BaseModel):
     sgr_classification: Optional[str] = None
     mortality_rate: float
     survival_rate: float
+    hatch_rate: Optional[float] = None  # ratio 0..1, populated only while stage in {eggs, fry}
     
     # Feeding
     daily_feed_recommended_kg: Optional[float] = None

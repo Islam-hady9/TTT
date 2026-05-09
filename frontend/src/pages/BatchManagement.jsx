@@ -152,13 +152,13 @@ export default function BatchManagement() {
     if (!pond) return { color: 'badge-secondary', text: t('status.active') }
 
     // Check if ready for transfer/harvest based on weight and unit type
-    if (pond.unit_type === 'nursery' && batch.avg_weight >= 40) {
+    if (pond.unit_type === 'hatchery' && batch.avg_weight >= 40) {
       return { color: 'badge-success', text: 'جاهز للنقل → التربية' }
     }
-    if (pond.unit_type === 'pregrow' && batch.avg_weight >= 200) {
+    if (pond.unit_type === 'growout' && batch.avg_weight >= 200) {
       return { color: 'badge-success', text: 'جاهز للنقل → التسمين' }
     }
-    if (pond.unit_type === 'growout' && batch.avg_weight >= 350) {
+    if (pond.unit_type === 'fattening' && batch.avg_weight >= 350) {
       return { color: 'badge-success', text: 'جاهز للحصاد' }
     }
 
