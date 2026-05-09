@@ -18,12 +18,6 @@ logs/
 .env.local
 .env.*.local
 
-# Local data (real production Excel — never commit)
-data/
-*.xlsx
-*.xls
-!docs/specs/*.xlsx
-
 # SQLite DBs (anywhere in repo)
 *.db
 *.sqlite
