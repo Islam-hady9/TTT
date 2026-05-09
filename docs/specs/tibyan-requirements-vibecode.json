@@ -1,0 +1,1177 @@
+{
+  "project_metadata": {
+    "project_name": "Tibyan - نظام إدارة مزارع الاستزراع المائي",
+    "project_code": "TIBYAN-AQ-2026",
+    "version": "1.0.0",
+    "date_created": "2026-05-04",
+    "domain": "Aquaculture Farm Management System",
+    "species": "Tilapia (Oreochromis niloticus)",
+    "production_systems": [
+      "RAS (Recirculating Aquaculture System)",
+      "Biofloc Technology System"
+    ],
+    "target_market": "Saudi Arabia",
+    "language": "ar",
+    "description": "نظام متكامل لإدارة مزارع استزراع أسماك البلطي باستخدام تقنيات RAS وBiofloc"
+  },
+  "system_overview": {
+    "purpose": "تجميع وإدارة وتتبع جميع بيانات المزرعة من التحضين حتى الحصاد والتسويق",
+    "platforms": {
+      "web_dashboard": {
+        "target_users": [
+          "مالك المزرعة",
+          "مدير المزرعة",
+          "المهندسين",
+          "المشتريات",
+          "المبيعات"
+        ],
+        "purpose": "عرض البيانات والتقارير والمؤشرات",
+        "primary_device": "كمبيوتر/لابتوب",
+        "responsive": true
+      },
+      "mobile_app": {
+        "target_users": [
+          "مهندسو المزرعة",
+          "العمال/الفنيين"
+        ],
+        "purpose": "إدخال البيانات اليومية فقط",
+        "platforms": [
+          "Android",
+          "iOS"
+        ],
+        "offline_support": true
+      }
+    },
+    "languages": [
+      "العربية",
+      "English"
+    ],
+    "multi_farm_support": true,
+    "data_retention_years": 3
+  },
+  "user_personas": [
+    {
+      "role": "مالك المزرعة",
+      "role_en": "Farm Owner",
+      "count": 1,
+      "device": "Mac/iPhone",
+      "daily_logins": "5-7 مرات",
+      "top_tasks": [
+        "متابعة المزرعة يومياً",
+        "معرفة كمية الأعلاف المستهلكة",
+        "كمية النافق",
+        "كمية الأسماك المتبقية",
+        "معدل التحويل",
+        "متوسط وزن الأسماك",
+        "الكتلة الحية داخل الأحواض",
+        "قياسات المياه",
+        "استهلاك المولاس والأدوية والبروبيتوكس",
+        "الأحواض الجاهزة للحصاد",
+        "مواعيد الصيد المتوقعة",
+        "متابعة المهندسين",
+        "النواقص في المخازن",
+        "التاسكات المُسندة للمهندسين"
+      ],
+      "current_tools": [
+        "زيارات ميدانية",
+        "التليفون",
+        "ورقة وقلم",
+        "نظام Odoo"
+      ],
+      "biggest_frustration": "وقت كبير في المتابعة، غير متفرغ بالكامل، لا يملك علم بالعمليات اليومية",
+      "what_would_help": "تطبيق موبايل أو موقع ويب يعرض كل التفاصيل من العمليات حتى البيع والصيانات والمشتريات"
+    },
+    {
+      "role": "مدير المزرعة",
+      "role_en": "Farm Manager",
+      "count": 1,
+      "device": "لابتوب Dell/Lenovo + موبايل Android",
+      "daily_logins": "5-7 مرات",
+      "top_tasks": [
+        "وضع جداول التغذية",
+        "متابعة أداء المهندسين",
+        "تنسيق زيارات الموقع",
+        "التنسيق مع الأقسام الخارجية",
+        "مواعيد الصيانة",
+        "خط سير الأعمال بين المهندسين",
+        "التسليم والتسليم للشفتات"
+      ],
+      "current_tools": [
+        "Excel",
+        "Notepad",
+        "أجهزة Water Quality المحمولة",
+        "Whiteboard للتاسكات",
+        "IoT (مستقبلاً)"
+      ],
+      "biggest_frustration": "تشتت البيانات، التاسكات المتتالية مع المهندسين غير منظمة، تنسيق الزيارات صعب",
+      "what_would_help": "نظام موحد للبيانات، متابعة أداء المهندسين بمؤشرات محسوبة، تنسيق أسهل مع الفرق الخارجية"
+    },
+    {
+      "role": "مهندسو المزرعة",
+      "role_en": "Farm Engineers",
+      "count": 2,
+      "device": "لابتوب Dell/Lenovo + موبايل Android",
+      "daily_logins": "7-10 مرات",
+      "top_tasks": [
+        "متابعة عمليات التغذية",
+        "إضافة الأدوية والمطهرات والبروبيوتيكس",
+        "قياسات جودة المياه",
+        "تحديد النافق وإضافته",
+        "متابعة التاسكات اليومية",
+        "فرز الأحواض ونقلها",
+        "متابعة عمليات الحصاد"
+      ],
+      "current_tools": [
+        "Excel",
+        "Notepad",
+        "أجهزة Water Quality المحمولة",
+        "IoT (مستقبلاً)"
+      ],
+      "biggest_frustration": "تسجيل بيانات يدوي ثم إعادة إدخالها على اللابتوب، تشتت البيانات، عدم وجود تنبيهات لانتهاء المخزون",
+      "what_would_help": "تطبيق موبايل يسهل إدخال البيانات المستمر، تنسيق المخزون مع المشتريات، تقارير تسليم وتسليم موثقة"
+    },
+    {
+      "role": "المبيعات",
+      "role_en": "Sales",
+      "count": 1,
+      "device": "لابتوب Dell/Lenovo + موبايل Android",
+      "daily_logins": "1 مرة يومياً",
+      "top_tasks": [
+        "متابعة الأحواض التي وصلت للوزن التسويقي",
+        "تنسيق مع مناديب البيع أو أسواق B2B",
+        "جدولة الزيارات"
+      ],
+      "current_tools": [
+        "تليفون",
+        "واتساب"
+      ],
+      "biggest_frustration": "لا يوجد نظام لتحديد إتاحة الزيارات، لا يوجد نظام لمتابعة عمليات المبيعات",
+      "what_would_help": "تطبيق يعرض جدول الزيارات المتاحة، أوقات الحصاد، الأحواض المتاحة للحصاد بالكميات"
+    },
+    {
+      "role": "المشتريات",
+      "role_en": "Purchasing",
+      "count": 1,
+      "device": "لابتوب Dell/Lenovo + موبايل Android",
+      "daily_logins": "1-3 مرات يومياً",
+      "top_tasks": [
+        "متابعة السحب من الخامات",
+        "موازنة الستوك الموجود والمستهلك",
+        "تحديد المشتريات المستقبلية من المعدات والأعلاف والزريعة والأدوية"
+      ],
+      "current_tools": [
+        "Odoo",
+        "Excel"
+      ],
+      "biggest_frustration": "التنسيق المسبق لانتهاء المخزون يتم يدوياً، ميل الشركة للمشتريات السريعة بسبب عدم توفر احتياطي",
+      "what_would_help": "تنبيهات بانخفاض المخزون، معرفة مواعيد صيانة كل معدة، تنسيق مسبق مع الموردين"
+    }
+  ],
+  "fish_life_cycle": {
+    "description": "دورة حياة سمكة البلطي في النظام الإنتاجي",
+    "stages": [
+      {
+        "stage_id": "stage_1",
+        "stage_name_ar": "البيض",
+        "stage_name_en": "Eggs",
+        "weight_range": "< 1 ملم",
+        "duration_days": "3-5 أيام",
+        "production_system": "حضانة منفصلة (إن وجدت)",
+        "unit": "وحدة التحضين",
+        "system_type": "RAS",
+        "key_activities": [
+          "تسجيل كمية البيض",
+          "نسبة الفقس"
+        ],
+        "data_to_track": [
+          "egg_count",
+          "hatch_rate_percent"
+        ]
+      },
+      {
+        "stage_id": "stage_2",
+        "stage_name_ar": "اليرقات (Fry)",
+        "stage_name_en": "Larvae / Fry",
+        "weight_range": "< 1 جرام",
+        "duration_days": "14-21 يوم",
+        "production_system": "وحدة التحضين",
+        "unit": "وحدة التحضين",
+        "system_type": "RAS",
+        "key_activities": [
+          "تغذية مبدئية",
+          "قياس النمو اليومي",
+          "مراقبة جودة المياه"
+        ],
+        "data_to_track": [
+          "daily_mortality",
+          "water_quality",
+          "feed_amount"
+        ]
+      },
+      {
+        "stage_id": "stage_3",
+        "stage_name_ar": "الصغار (Fingerlings)",
+        "stage_name_en": "Fingerlings",
+        "weight_range": "1 - 30 جرام",
+        "duration_days": "28-56 يوم",
+        "production_system": "وحدة التحضين",
+        "unit": "وحدة التحضين",
+        "system_type": "RAS",
+        "key_activities": [
+          "الفرز حسب الحجم",
+          "نقل للتربية",
+          "مراقبة النفوق (حد أقصى 35%)"
+        ],
+        "data_to_track": [
+          "average_weight",
+          "mortality_rate",
+          "biomass",
+          "fcr"
+        ]
+      },
+      {
+        "stage_id": "stage_4",
+        "stage_name_ar": "النمو (Grow-out)",
+        "stage_name_en": "Grow-out",
+        "weight_range": "30 - 200 جرام",
+        "duration_days": "60-90 يوم",
+        "production_system": "وحدة التربية",
+        "unit": "وحدة التربية",
+        "system_type": "Biofloc",
+        "key_activities": [
+          "متابعة النمو",
+          "تغذية مكثفة",
+          "إضافة مولاس",
+          "إضافة بروبيوتيكس",
+          "قياس الفلوك"
+        ],
+        "data_to_track": [
+          "sgr",
+          "biomass",
+          "water_quality",
+          "floc_level",
+          "molasses_amount"
+        ]
+      },
+      {
+        "stage_id": "stage_5",
+        "stage_name_ar": "التسمين (Fattening)",
+        "stage_name_en": "Fattening",
+        "weight_range": "200 - 600 جرام",
+        "duration_days": "60-90 يوم",
+        "production_system": "وحدة التسمين",
+        "unit": "وحدة التسمين",
+        "system_type": "Biofloc",
+        "key_activities": [
+          "الوصول للوزن التسويقي",
+          "تحديد مواعيد الحصاد",
+          "الفرز النهائي"
+        ],
+        "data_to_track": [
+          "average_weight",
+          "harvest_readiness",
+          "fcr_cumulative",
+          "mortality_rate"
+        ]
+      },
+      {
+        "stage_id": "stage_6",
+        "stage_name_ar": "الحصاد (Harvest)",
+        "stage_name_en": "Harvest",
+        "weight_range": "> 350 جرام",
+        "duration_days": "يوم واحد",
+        "production_system": "—",
+        "unit": "—",
+        "system_type": "—",
+        "key_activities": [
+          "تجميع الأسماك",
+          "الوزن",
+          "التعبئة",
+          "التسويق"
+        ],
+        "data_to_track": [
+          "harvest_weight",
+          "harvest_count",
+          "buyer",
+          "price_per_kg"
+        ]
+      }
+    ],
+    "batch_tracking": {
+      "description": "كل دورة إنتاجية (Batch) لها كود فريد يُسجل في أول يوم إنزال الأسماك",
+      "batch_code_format": "XXX (مثال: 001, 002)",
+      "traceability": "من مرحلة الإنزال حتى الحصاد (Full Traceability)",
+      "transfer_rule": "الانتقال بين المراحل يتطلب عملية فرز ونقل (Sorting & Transfer) كل 3-4 أشهر"
+    }
+  },
+  "domain_glossary": [
+    {
+      "term_ar": "معامل التحويل الغذائي",
+      "term_en": "FCR - Feed Conversion Ratio",
+      "definition": "كم كيلو علف لكل كيلو زيادة في وزن السمك",
+      "unit": "—",
+      "acceptable_range": "1.0 - 2.0",
+      "default_value": "1.5",
+      "source": "أبحاث FAO + خبرة NABCO",
+      "notes": "القيم غير ثابتة وتختلف حسب الموسم والمرحلة ونوع السمكة ومياه دافئة/باردة وجودة العلف",
+      "thresholds": {
+        "excellent": "1.1 - 1.4",
+        "good": "1.4 - 1.7",
+        "poor": "> 1.7"
+      }
+    },
+    {
+      "term_ar": "الأكسجين الذائب",
+      "term_en": "DO - Dissolved Oxygen",
+      "definition": "الأكسجين الذائب في الماء",
+      "unit": "mg/L",
+      "acceptable_range": "4.0 - 9.0",
+      "default_value": "6.0 - 8.0",
+      "source": "Best practices Tilapia",
+      "notes": "حسب المرحلة العمرية ومعدل الهواء ونوع البروتين ونوع النظام الإنتاجي",
+      "thresholds": {
+        "critical_low": "< 4.0",
+        "optimal": "6.0 - 8.0",
+        "high": "> 9.0"
+      }
+    },
+    {
+      "term_ar": "مستوى الحموضة والقلوية",
+      "term_en": "pH Level",
+      "definition": "مستوى الحموضة والقلوية للماء",
+      "unit": "—",
+      "acceptable_range": "6.5 - 8.5",
+      "default_value": "7.0 - 8.3",
+      "source": "Tilapia tolerance",
+      "notes": "تختلف حسب الليل أو النهار ونوع النظام الإنتاجي. قليل بالنهار وتزيد بالليل",
+      "thresholds": {
+        "critical_low": "< 6.5",
+        "optimal": "7.0 - 8.3",
+        "critical_high": "> 8.5"
+      }
+    },
+    {
+      "term_ar": "درجة حرارة المياه",
+      "term_en": "Water Temperature",
+      "definition": "درجة حرارة المياه",
+      "unit": "°C",
+      "acceptable_range": "20 - 35",
+      "default_value": "25 - 30",
+      "source": "Tilapia optimum",
+      "notes": "تختلف حسب الموسم",
+      "thresholds": {
+        "critical_low": "< 20",
+        "optimal": "25 - 30",
+        "critical_high": "> 35"
+      }
+    },
+    {
+      "term_ar": "إجمالي نيتروجين الأمونيا",
+      "term_en": "TAN - Total Ammonia Nitrogen",
+      "definition": "إجمالي نيتروجين الأمونيا في الماء",
+      "unit": "mg/L",
+      "acceptable_range": "0 - 1.5",
+      "default_value": "0.5",
+      "source": "Tilapia tolerance",
+      "notes": "تعتمد على درجة الحرارة ومستوى pH في المياه",
+      "thresholds": {
+        "safe": "< 0.5",
+        "warning": "0.5 - 1.5",
+        "dangerous": "> 1.5"
+      }
+    },
+    {
+      "term_ar": "نسبة الأمونيا الناتجة من العلف",
+      "term_en": "TAN as % of feed",
+      "definition": "نسبة الأمونيا الناتجة من العلف",
+      "unit": "%",
+      "acceptable_range": "3 - 6%",
+      "default_value": "3% - 4%",
+      "source": "أبحاث Timmons & Ebeling",
+      "notes": "المياه العذبة 3-4%، المالحة 4-6%. تزداد مع نسبة البروتين في العلف",
+      "thresholds": {
+        "freshwater": "3% - 4%",
+        "brackish": "4% - 6%"
+      }
+    },
+    {
+      "term_ar": "معدل استهلاك السمكة للأكسجين",
+      "term_en": "Oxygen Consumption Rate",
+      "definition": "معدل استهلاك السمكة للأكسجين",
+      "unit": "mg O₂/kg fish/h",
+      "acceptable_range": "250 - 750",
+      "default_value": "300 - 500",
+      "source": "—",
+      "notes": "حسب نوع السمك ودرجة الحرارة ونوع النظام الإنتاجي والموسم"
+    },
+    {
+      "term_ar": "وزن السمكة عند الحصاد",
+      "term_en": "Harvest Weight",
+      "definition": "الوزن المستهدف عند الحصاد",
+      "unit": "g",
+      "acceptable_range": "350 - 600",
+      "default_value": "450",
+      "source": "متطلبات السوق السعودي",
+      "notes": "حسب طلب السوق",
+      "thresholds": {
+        "minimum_marketable": "350",
+        "optimal": "450",
+        "premium": "600"
+      }
+    },
+    {
+      "term_ar": "أقصى كثافة تخزين",
+      "term_en": "Max Stocking Density",
+      "definition": "أقصى كثافة تخزين مسموح بها",
+      "unit": "kg/m³",
+      "acceptable_range": {
+        "biofloc": "10 - 25",
+        "ras": "20 - 60"
+      },
+      "default_value": {
+        "biofloc": "10 - 20",
+        "ras": "30 - 45"
+      },
+      "source": "—",
+      "notes": "حسب نوع النظام الإنتاجي"
+    },
+    {
+      "term_ar": "نسبة العلف اليومي من الكتلة الحية",
+      "term_en": "Daily Feeding Rate",
+      "definition": "نسبة العلف اليومي من الـ biomass",
+      "unit": "% body weight",
+      "acceptable_range": "1 - 18%",
+      "default_value": "حسب العمر",
+      "source": "حسب وزن السمك",
+      "notes": "يعتمد على الحرارة"
+    },
+    {
+      "term_ar": "نسبة الأمونيا السامة",
+      "term_en": "NH3 - Toxic Ammonia",
+      "definition": "نسبة الأمونيا السامة في الماء",
+      "unit": "mg/L",
+      "acceptable_range": "0 - 0.5",
+      "default_value": "< 0.5",
+      "source": "—",
+      "notes": "مرتبطة بدرجة pH والحرارة ومستوى الأمونيا الكلية"
+    },
+    {
+      "term_ar": "معدل النمو اليومي",
+      "term_en": "SGR - Specific Growth Rate",
+      "definition": "الوزن النهائي - الوزن الابتدائي / عدد الأيام",
+      "unit": "—",
+      "acceptable_range": {
+        "hatchery": "0.25 - 0.5 g/day",
+        "nursery": "0.5 - 1.5 g/day",
+        "growout": "1 - 5 g/day"
+      },
+      "default_value": {
+        "hatchery": "0.25 - 0.5",
+        "nursery": "0.5 - 1.0",
+        "growout": "1 - 5"
+      },
+      "source": "حسب المرحلة العمرية والظروف الحرارية ونوع النظام",
+      "notes": "حسب المرحلة العمرية للأسماك والظروف الحرارية ونوع النظام"
+    },
+    {
+      "term_ar": "مستوى الفلوك",
+      "term_en": "Floc Level",
+      "definition": "مستوى الكتلة الحيوية الميكروبية في الماء (Biofloc)",
+      "unit": "—",
+      "acceptable_range": "25 - 40",
+      "default_value": "30 - 35",
+      "source": "خبرة Dr. Islam",
+      "notes": "بعد 40 لا يتم إضافة مولاس",
+      "thresholds": {
+        "low": "< 25 (إضافة مولاس)",
+        "optimal": "25 - 40",
+        "high": "> 40 (توقف مولاس)"
+      }
+    },
+    {
+      "term_ar": "القلوية الكلية",
+      "term_en": "Total Alkalinity",
+      "definition": "مستوى القلوية الكلية في الماء",
+      "unit": "mg/L",
+      "acceptable_range": "100 - 150",
+      "default_value": "120 - 150",
+      "source": "Best practices Tilapia",
+      "notes": "عند انخفاضها عن 100 يتم إضافة كربونات الكالسيوم",
+      "thresholds": {
+        "critical_low": "< 100 (إضافة CaCO₃)",
+        "optimal": "120 - 150",
+        "acceptable": "100 - 120"
+      }
+    }
+  ],
+  "data_inventory": [
+    {
+      "data_type": "قراءات جودة المياه (DO, pH, Temp, TAN, Alkalinity, Floc, Ammonia)",
+      "source": "manual / IoT Sensor (ReNile - قيد الشحن)",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "يومي 1-3 مرات",
+      "data_size": "كل عنصر له قياس",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": true,
+      "automation_priority": 2,
+      "notes": "يجب أن يكون لكل عنصر قيم threshold (حد أعلى وحد أدنى وقبول في الوسط)"
+    },
+    {
+      "data_type": "كمية العلف اليومية",
+      "source": "manual - من ميزان",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "2-4 مرات يومياً",
+      "data_size": "بالكجم",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "لا يوجد علافات أوتوماتيك حالياً"
+    },
+    {
+      "data_type": "النفوق (Mortality)",
+      "source": "manual - الفني يلاحظ",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "يومي",
+      "data_size": "عدد أسماك",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "يجب تحديد النسب المقبولة (35% للتحضين، 5-10% للتربية/التسمين)"
+    },
+    {
+      "data_type": "إجمالي عدد الأسماك",
+      "source": "manual",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "في أول يوم إنزال الأسماك",
+      "data_size": "عدد",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "كود الدورة (Batch Code)",
+      "source": "manual",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "في أول يوم إنزال الأسماك",
+      "data_size": "001/002 مثال",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "متوسط وزن الأسماك",
+      "source": "manual",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "أسبوعين",
+      "data_size": "جرام",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "يجب وجود توقعات للوزن لتحديد أداء المزرعة"
+    },
+    {
+      "data_type": "معدل التغذية اليومي",
+      "source": "manual - Dr. Islam",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "حسب تعليمات Dr. Islam",
+      "data_size": "—",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "جدول التغذية",
+      "source": "manual - Dr. Islam",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "حسب تعليمات Dr. Islam",
+      "data_size": "—",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "معدل التحويل FCR",
+      "source": "manual - محسوب",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "حسب تعليمات Dr. Islam",
+      "data_size": "—",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "الأدوية والإضافات والبروبيوتيكس",
+      "source": "manual",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "حسب تعليمات Dr. Islam",
+      "data_size": "—",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    },
+    {
+      "data_type": "كمية المولاس",
+      "source": "manual",
+      "entered_by": "مهندس فني داخل الموقع",
+      "frequency": "حسب تعليمات Dr. Islam",
+      "data_size": "—",
+      "current_tool": "ورقة + Excel",
+      "integration_possible": false,
+      "automation_priority": 1,
+      "notes": "—"
+    }
+  ],
+  "kpis": [
+    {
+      "kpi_name": "النمو",
+      "target_users": [
+        "المالك",
+        "مدير المزرعة",
+        "المهندسين"
+      ],
+      "display_priority": 1,
+      "screen": "جميع الشاشات",
+      "formula": "الوزن النهائي - الوزن الابتدائي",
+      "target_value": "الوصول للوزن التسويقي 350-600 جرام",
+      "consequence_if_missed": "عدم تحقيق خطة الإنتاج"
+    },
+    {
+      "kpi_name": "الإعاشة/النفوق",
+      "target_users": [
+        "المالك",
+        "المدير",
+        "المهندسين"
+      ],
+      "display_priority": 1,
+      "screen": "جميع الشاشات",
+      "formula": "رصد عدد الأسماك النافقة أثناء عمليات الفرز بين المراحل",
+      "target_value": "التحضين = 35%، التربية/التسمين = 5-10%",
+      "consequence_if_missed": "عدم الوصول للكتلة الحية المطلوبة وعدم تحقيق مستهدف الإنتاج"
+    },
+    {
+      "kpi_name": "إجمالي الكتلة الحية",
+      "target_users": [
+        "جميع المستخدمين"
+      ],
+      "display_priority": 1,
+      "screen": "جميع الشاشات",
+      "formula": "متوسط وزن السمكة × إجمالي عدد الأسماك لكل مرحلة",
+      "target_value": "تحقيق خطة الإنتاج المتفق عليها",
+      "consequence_if_missed": "لن يتحقق خطة الإنتاج / عدم وصول للمستهدف الإنتاجي"
+    },
+    {
+      "kpi_name": "جودة المياه",
+      "target_users": [
+        "المهندسين",
+        "مدير المزرعة"
+      ],
+      "display_priority": 1,
+      "screen": "جميع الشاشات",
+      "formula": "حسب نوع المعاملات (خصائص المياه)",
+      "target_value": "استقرار البيئة المائية لتمكين الأسماك من نمو مثالي",
+      "consequence_if_missed": "فساد البيئة المائية وضعف نمو الأسماك"
+    },
+    {
+      "kpi_name": "التغذية / معامل التحويل الغذائي FCR",
+      "target_users": [
+        "المهندسين",
+        "مدير المزرعة",
+        "المالك"
+      ],
+      "display_priority": 1,
+      "screen": "جميع الشاشات",
+      "formula": "كمية العلف المستهلك / كمية الكتلة الحية المنتجة",
+      "target_value": "ضعيف >1.7، جيد 1.4-1.7، ممتاز 1.1-1.4",
+      "consequence_if_missed": "زيادة التكلفة على كيلو الأسماك وتقليل المكسب"
+    }
+  ],
+  "integrations_and_constraints": [
+    {
+      "question": "هل عندنا sensors بترسل بيانات أوتوماتيك؟",
+      "answer": "نعم",
+      "details": "IoT Sensors for water quality - لسه هتتشحن في الطريق (ReNile)",
+      "priority": 2
+    },
+    {
+      "question": "هل في نظام محاسبة (ERP/Accounting) موجود نريد التكامل معه؟",
+      "answer": "نعم",
+      "details": "Odoo - لكن مش هنعمل أي انتجريشن في الفترة الحالية",
+      "priority": 3
+    },
+    {
+      "question": "هل النظام لازم يشتغل offline في حال قطع الإنترنت؟",
+      "answer": "نعم",
+      "details": "لازم يشتغل والإنترنت مش شغال",
+      "priority": 1
+    },
+    {
+      "question": "اللغات المطلوبة: عربي بس، أم عربي/إنجليزي؟",
+      "answer": "نعم",
+      "details": "عربي وإنجليزي",
+      "priority": 1
+    },
+    {
+      "question": "الجوال: Android فقط، iOS فقط، أم الاثنين؟",
+      "answer": "نعم",
+      "details": "يشتغل الاثنين",
+      "priority": 1
+    },
+    {
+      "question": "هل بيانات حساسة (رواتب، تكاليف) تتطلب صلاحيات معينة؟",
+      "answer": "نعم",
+      "details": "لا يشاهد البيانات المالية إلا المالك وإدارة الحسابات فقط",
+      "priority": 1
+    },
+    {
+      "question": "في تطبيق NABCO قديم لازم ننقل بياناته؟",
+      "answer": "لا",
+      "details": "—",
+      "priority": 0
+    },
+    {
+      "question": "Excel imports: هل في قوالب موجودة بالفعل؟",
+      "answer": "نعم",
+      "details": "قوالب موجودة مع Dr. Islam وتيم الإنتاج والمشتريات والمخازن",
+      "priority": 1
+    },
+    {
+      "question": "WhatsApp / SMS notifications: مطلوبة؟",
+      "answer": "نعم",
+      "details": "للطوارئ فقط - لـ Dr. Islam والمالك والأقسام الخارجية",
+      "priority": 3
+    },
+    {
+      "question": "Reports: PDF, Excel، ولا الاثنين؟",
+      "answer": "نعم",
+      "details": "يفضل الاثنين - تقارير أسبوعية (نهاية يوم الخميس)، data history للـ handover",
+      "priority": 3
+    },
+    {
+      "question": "Multi-farm: هل في خطة لمزارع تانية في المستقبل؟",
+      "answer": "نعم",
+      "details": "هيكون في مزارع ثانية وتغيير جزئي في workflow",
+      "priority": 2
+    },
+    {
+      "question": "Backup & restore: هل في requirement خاص؟",
+      "answer": "نعم",
+      "details": "Data storage كبير - تخزين لآخر 3 سنوات على الأقل",
+      "priority": 2
+    },
+    {
+      "question": "Devices: عدد المستخدمين المتزامنين المتوقع",
+      "answer": "—",
+      "details": "7-10 مستخدمين حاليين",
+      "priority": 1
+    },
+    {
+      "question": "Storage: كم سنة محتاجين نحتفظ بالبيانات؟",
+      "answer": "—",
+      "details": "سنة إلى 3 سنوات على الأقل",
+      "priority": 2
+    },
+    {
+      "question": "Security: في authentication خاص (SSO, 2FA)?",
+      "answer": "نعم",
+      "details": "2FA (Two-Factor Authentication) - OTP للأمان",
+      "priority": 1
+    }
+  ],
+  "screens": [
+    {
+      "screen_name": "Dashboard الرئيسي",
+      "users": [
+        "جميع الأعضاء"
+      ],
+      "device": "ويب (الموبايل للـ data entry فقط في المرحلة الحالية)",
+      "sections": [
+        "أداء كل وحدة من وحدات المزرعة (النفوق مقابل العدد الكلي، معدل التحويل التراكمي، متوسط الوزن)",
+        "الأحواض الجاهزة للحصاد",
+        "كميات السحب من الأعلاف والأدوية والمطهرات والبروبيوتكس",
+        "جودة المياه لكل وحدة (متوسط)",
+        "مستويات المخزون (العلف، الأدوية، الإضافات، المطهرات، المولاس، البروبيوتيكس)",
+        "Financial Analysis (مستقبلاً): تكلفة، عوائد، cost per pound, cost per kg, cost per round, cost per year",
+        "نسبة الإنتاجية: الأحواض المحصودة والمباعة / الكمية الكلية",
+        "معدل تغيير المياه الكلي",
+        "جدول التغذية وجدول قياسات المياه"
+      ],
+      "top_actions": [
+        "زر لكل وحدة ينقل للتفاصيل (dropdown أو صفحة منفصلة)",
+        "زر عرض البيانات كـ matrices/tables أو charts",
+        "زر تحميل data history للمزرعة"
+      ],
+      "build_priority": 1
+    },
+    {
+      "screen_name": "وحدة التحضين",
+      "users": [
+        "المالك",
+        "مدير المزرعة",
+        "المهندسين المسؤولين"
+      ],
+      "device": "ويب (الموبايل للـ data entry فقط)",
+      "sections": [
+        "بيانات كل حوض منفصل (stocking, biomass, water quality, mortality, FCR, average weight)",
+        "استهلاك البروبيوتيكس والإضافات والأدوية والمطهرات والمولاس",
+        "معدل تغيير المياه",
+        "أوقات التغذية وقياس جودة المياه",
+        "Layout للوحدة ككل وأبعادها (للعرض على المستثمرين)"
+      ],
+      "top_actions": [
+        "عرض داتا كل حوض منفصل",
+        "صفحة لكل حوض (10 صفحات تحت الوحدة)",
+        "عرض layout الوحدة"
+      ],
+      "build_priority": 1
+    },
+    {
+      "screen_name": "وحدة التربية",
+      "users": [
+        "المالك",
+        "مدير المزرعة",
+        "المهندسين المسؤولين"
+      ],
+      "device": "ويب (الموبايل للـ data entry فقط)",
+      "sections": [
+        "نفس بيانات وحدة التحضين",
+        "Bio-Floc system (مختلف عن RAS)",
+        "بيانات كل حوض منفصل",
+        "Layout للوحدة"
+      ],
+      "top_actions": [
+        "عرض داتا كل حوض منفصل",
+        "صفحة لكل حوض",
+        "عرض layout الوحدة"
+      ],
+      "build_priority": 1
+    },
+    {
+      "screen_name": "وحدة التسمين",
+      "users": [
+        "المالك",
+        "مدير المزرعة",
+        "المهندسين المسؤولين"
+      ],
+      "device": "ويب (الموبايل للـ data entry فقط)",
+      "sections": [
+        "نفس بيانات وحدة التحضين",
+        "Bio-Floc system",
+        "بيانات كل حوض منفصل",
+        "Layout للوحدة"
+      ],
+      "top_actions": [
+        "عرض داتا كل حوض منفصل",
+        "صفحة لكل حوض",
+        "عرض layout الوحدة"
+      ],
+      "build_priority": 1
+    }
+  ],
+  "use_cases": [
+    {
+      "id": 0,
+      "name": "إضافة العلف",
+      "actors": "العمال والفنيين (التنفيذ)، المهندسين (الإشراف والكميات والتوقيتات)، مدير المزرعة (جداول التغذية)",
+      "goal": "نمو السمكة بسرعة معينة للوصول للحجم التسويقي في الوقت المناسب",
+      "importance": "عشان تحقيق سرعة نمو معينة في مدة معينة",
+      "steps": [
+        "عمل schedule لجداول التغذية",
+        "معرفة درجة حرارة المياه",
+        "تحديد كميات العلف بناءً على درجات الحرارة",
+        "التأكد من أن خصائص المياه في حالة جيدة",
+        "معرفة حجم السمكة لتحديد كميات العلف المطلوبة",
+        "تحديد مواعيد تقديم العلف خلال اليوم",
+        "تقسيم إجمالي العلف اليومي إلى 2-4 وجبات"
+      ],
+      "expected_result": "إقبال السمكة على العلف وإنهاء التغذية من 15-20 دقيقة",
+      "frequency": "2-4 مرات يومياً"
+    },
+    {
+      "id": 1,
+      "name": "إضافة المولاس",
+      "actors": "العمال (التنفيذ)، المهندسين (الإشراف)، Dr. Islam (حساب الكمية)",
+      "goal": "تنظيم C/N Ratio داخل أحواض البيئة المائية",
+      "importance": "لتنظيم نشاط البكتيريا التي تتخلص من الأمونيا وتحول المخلفات لبروتين ميكروبي",
+      "steps": [
+        "قراءة مستوى الفلوك في المياه",
+        "مستوى الفلوك يجب أن يكون بين 25-40",
+        "بعد 40 لا يتم إضافة مولاس",
+        "الإضافة المتكررة متغيرة حسب الحالة الحيوية (ردود فعل على القراءات)"
+      ],
+      "expected_result": "تحقيق التوازن الحيوي داخل البيئة المائية",
+      "frequency": "يومياً مرتين لخمس مرات حسب طلب Dr. Islam"
+    },
+    {
+      "id": 2,
+      "name": "إضافة كربونات الكالسيوم",
+      "actors": "المهندسين",
+      "goal": "الحفاظ على مستوى قلوية كلية بين 120-150 ملجم/لتر",
+      "importance": "تمكين البكتيريا من التخلص من النيتروجين الزائد",
+      "steps": [
+        "قياس دوري للقلوية الكلية",
+        "رصد التغير الحاصل",
+        "بدء إضافة كربونات الكالسيوم بعد انخفاض القلوية عن 100 ملجم/لتر"
+      ],
+      "expected_result": "استقرار البيئة المائية ومنع تراكم النيتروجين الضار",
+      "frequency": "يومياً مرتين لـ 3 مرات في فترة عدم الاستقرار"
+    },
+    {
+      "id": 3,
+      "name": "القياس الدوري لخصائص المياه",
+      "actors": "المهندسين",
+      "goal": "فحص جودة المياه",
+      "importance": "لضمان استقرار البيئة المائية حول الأسماك",
+      "steps": [
+        "قياس الأكسجين وpH وحرارة وقلوية كلية وفلوك وأمونيا",
+        "قياس صباحاً وبعد الظهر ومساءً",
+        "قياس في حالات الطوارئ"
+      ],
+      "expected_result": "الاستقرار البيئي للأسماك",
+      "frequency": "يومي 1-3 مرات"
+    },
+    {
+      "id": 4,
+      "name": "إضافة البروبيوتيكس",
+      "actors": "المهندسين",
+      "goal": "دعم النظام الحيوي داخل البيئة المائية",
+      "importance": "ضمان استقرار البيئة المائية للفلوك",
+      "steps": [
+        "تنزيل جرعات محددة من البكتيريا"
+      ],
+      "expected_result": "تحسين مستوى الفلوك في الأحواض",
+      "frequency": "مرة أسبوعياً"
+    },
+    {
+      "id": 5,
+      "name": "القياس اليومي للفلوك",
+      "actors": "المهندسين",
+      "goal": "رصد مستوى الفلوك لضمان الاستقرار المائي وتكوين البروتين الميكروبي",
+      "importance": "منع تدهور خصائص المياه في أحواض الأسماك",
+      "steps": [
+        "استخدام قمع الإيمهوف",
+        "أخذ عينة من مياه الحوض",
+        "تركها نصف ساعة للاستقرار"
+      ],
+      "expected_result": "فحص جودة مستوى الفلوك ورصد حاجة المياه للمولاس",
+      "frequency": "كل يوم"
+    },
+    {
+      "id": 6,
+      "name": "التخلص اليومي من المخلفات / التغيير الجزئي للمياه",
+      "actors": "العمال بإشراف المهندسين",
+      "goal": "التخلص من المخلفات المترسبة بالقاع",
+      "importance": "منع وجود مخلفات وتصاعد غازات ضارة واستهلاك الأكسجين ومنع غاز النيتريت وكبريتيد الهيدروجين",
+      "steps": [
+        "رفع ماسورة الصرف مدة نصف دقيقة",
+        "كل 4-6 ساعات"
+      ],
+      "expected_result": "تقليل الأحمال النيتروجينية في الحوض",
+      "frequency": "4-6 مرات يومياً"
+    },
+    {
+      "id": 7,
+      "name": "النظافة الدورية لسكريات الهواء (Diffuser Cleaning)",
+      "actors": "العمال (التنفيذ)، المهندسين (الإشراف)",
+      "goal": "الحفاظ على معدل تدفق الأكسجين وكفاءة ذوبانه",
+      "importance": "أي انخفاض في الأكسجين يؤثر على كفاءة نمو الفلوك وتغذية الأسماك",
+      "steps": [
+        "فك الديفيوزر",
+        "النقع في محلول مخفف بحمض هيدروكلوريك",
+        "إعادة تركيبه"
+      ],
+      "expected_result": "عودة تدفق الأكسجين بشكل مثالي",
+      "frequency": "مرة يومياً أو حسب الحاجة"
+    },
+    {
+      "id": 8,
+      "name": "الحصاد الدوري بين المراحل (فرز ونقل وإعادة تسكين)",
+      "actors": "العمال والفنيين (التنفيذ)، المهندسين (الإشراف)",
+      "goal": "تحقيق الخطة المستهدفة داخل القطاع الإنتاجي",
+      "importance": "فصل الأحجام الصغيرة عن الكبيرة وفحص جودة الأسماك وتوحيد الأحجام",
+      "steps": [
+        "حصاد",
+        "فحص",
+        "فرز",
+        "تسكين"
+      ],
+      "expected_result": "تحقيق خطة الإنتاج",
+      "frequency": "مرة كل 3-4 أشهر لجميع الأحواض"
+    },
+    {
+      "id": 9,
+      "name": "الحصاد النهائي",
+      "actors": "العمال والفنيين (التنفيذ)، المهندسين ومدير المزرعة (الإشراف)",
+      "goal": "خروج الأسماك للتسويق",
+      "importance": "لتحقيق الهدف من الاستثمار",
+      "steps": [
+        "تجميع الأسماك داخل الحوض في مكان واحد",
+        "خروج الأسماك للتعبئة في بوكس أو صناديق أو تنكات",
+        "وزن الأسماك بالكمية المطلوبة"
+      ],
+      "expected_result": "تحقيق هدف خطة الإنتاج",
+      "frequency": "3 مرات سنوياً لجميع أحواض التسمين"
+    }
+  ],
+  "business_rules": {
+    "water_quality_thresholds": [
+      {
+        "parameter": "درجة الحرارة",
+        "min": 20,
+        "max": 35,
+        "optimal_min": 25,
+        "optimal_max": 30,
+        "unit": "°C",
+        "action_if_violated": "تنبيه فوري"
+      },
+      {
+        "parameter": "pH",
+        "min": 6.5,
+        "max": 8.5,
+        "optimal_min": 7.0,
+        "optimal_max": 8.3,
+        "unit": "—",
+        "action_if_violated": "إضافة كربونات الكالسيوم"
+      },
+      {
+        "parameter": "DO",
+        "min": 4.0,
+        "max": 99,
+        "optimal_min": 6.0,
+        "optimal_max": 8.0,
+        "unit": "mg/L",
+        "action_if_violated": "تشغيل المضخات الطارئة"
+      },
+      {
+        "parameter": "TAN",
+        "min": 0,
+        "max": 1.5,
+        "optimal_min": 0,
+        "optimal_max": 0.5,
+        "unit": "mg/L",
+        "action_if_violated": "تقليل التغذية/تغيير مياه"
+      },
+      {
+        "parameter": "القلوية الكلية",
+        "min": 100,
+        "max": 150,
+        "optimal_min": 120,
+        "optimal_max": 150,
+        "unit": "mg/L",
+        "action_if_violated": "إضافة كربونات الكالسيوم"
+      },
+      {
+        "parameter": "مستوى الفلوك",
+        "min": 25,
+        "max": 40,
+        "optimal_min": 30,
+        "optimal_max": 35,
+        "unit": "—",
+        "action_if_violated": "إضافة/توقف مولاس"
+      }
+    ],
+    "feeding_rules": [
+      "التغذية 2-4 مرات يومياً حسب المرحلة العمرية",
+      "مدة التغذية: 15-20 دقيقة (يجب استهلاك العلف في هذه المدة)",
+      "كمية العلف تحسب بناءً على: وزن السمكة الحالي، درجة حرارة المياه، الكتلة الحية الإجمالية",
+      "نسبة العلف اليومي: 1-18% من الكتلة الحية حسب العمر"
+    ],
+    "harvest_rules": [
+      "الوزن التسويقي: 350-600 جرام (حسب طلب السوق السعودي)",
+      "الفرز والنقل: كل 3-4 أشهر للأحواض",
+      "الحصاد النهائي: 3 مرات سنوياً",
+      "نسبة النفوق المقبولة: التحضين 35%، التربية/التسمين 5-10%"
+    ],
+    "inventory_rules": [
+      "تنبيه عند الاقتراب من الحد الأدنى للمخزون",
+      "تنسيق مسبق مع الموردين قبل انتهاء المخزون",
+      "متابعة مواعيد صيانة كل معدة على حدة"
+    ]
+  },
+  "formulas": {
+    "sgr": {
+      "name": "معدل النمو النوعي",
+      "formula": "SGR = (ln(W_final) - ln(W_initial)) / days × 100",
+      "stages": {
+        "hatchery": "0.25 - 0.5 g/day",
+        "nursery": "0.5 - 1.5 g/day",
+        "growout": "1 - 5 g/day"
+      }
+    },
+    "fcr": {
+      "name": "معامل التحويل الغذائي",
+      "formula": "FCR = Total_Feed_Consumed (kg) / Total_Biomass_Gain (kg)",
+      "thresholds": {
+        "excellent": "1.1 - 1.4",
+        "good": "1.4 - 1.7",
+        "poor": "> 1.7"
+      }
+    },
+    "biomass": {
+      "name": "الكتلة الحية",
+      "formula": "Biomass (kg) = Average_Weight (g) × Fish_Count / 1000"
+    },
+    "mortality_rate": {
+      "name": "نسبة النفوق",
+      "formula": "Mortality_% = (Total_Mortality / Initial_Stock) × 100",
+      "thresholds": {
+        "hatchery_max": "35%",
+        "growout_max": "10%"
+      }
+    },
+    "daily_feed_rate": {
+      "name": "معدل التغذية اليومي",
+      "formula": "Daily_Feed_% = (Daily_Feed_Amount / Biomass) × 100",
+      "range": "1 - 18%"
+    }
+  },
+  "unclear_points": [
+    "هل يتم شراء الزريعة (Fingerlings) جاهزة من مورد خارجي أم هناك وحدة تفريخ داخلية؟",
+    "كيف يتم تسجيل الدخول الأول للزريعة؟ (عدد + متوسط وزن + تاريخ)",
+    "هل يتم تتبع كل سمكة على حدة أم المجموعة (Batch) ككل؟",
+    "هل هناك مستودع مركزي واحد أم مستودعات لكل وحدة؟",
+    "من يقوم بإدخال بيانات الصرف من المخزن؟ (المهندس أم أمين المخزن؟)",
+    "هل هناك جدول صيانة دوري للمعدات؟ (مضخات، ناشرات، أنظمة ترشيح)",
+    "من يقوم بإنشاء طلبات الصيانة؟",
+    "هل يتم البيع لـ B2B (أسواق/مطاعم) أم B2C (مستهلك نهائي)؟",
+    "هل يتم تسجيل أسعار البيع في النظام؟",
+    "هل سيتم ربط النظام بـ Odoo في المستقبل؟",
+    "ما هي البيانات المالية المطلوبة؟ (تكلفة الإنتاج، الإيرادات، هامش الربح)"
+  ],
+  "technical_stack_recommendation": {
+    "frontend_web": {
+      "framework": "React.js أو Vue.js",
+      "styling": "Tailwind CSS",
+      "charts": "Chart.js أو Recharts",
+      "state_management": "Redux أو Zustand",
+      "i18n": "react-i18next"
+    },
+    "frontend_mobile": {
+      "framework": "React Native أو Flutter",
+      "offline_storage": "SQLite / Realm / WatermelonDB",
+      "sync": "Background sync عند عودة الإنترنت"
+    },
+    "backend": {
+      "framework": "Node.js (Express) أو Python (FastAPI)",
+      "database": "PostgreSQL",
+      "cache": "Redis",
+      "auth": "JWT + 2FA (OTP via SMS/WhatsApp API)",
+      "file_storage": "AWS S3 أو Cloudflare R2"
+    },
+    "iot_integration": {
+      "protocol": "MQTT",
+      "sensors": "ReNile Water Quality Sensors",
+      "status": "قيد الشحن - التكامل مستقبلي"
+    },
+    "deployment": {
+      "cloud": "AWS أو DigitalOcean أو Hetzner",
+      "containers": "Docker + Docker Compose",
+      "ci_cd": "GitHub Actions"
+    }
+  }
+}
